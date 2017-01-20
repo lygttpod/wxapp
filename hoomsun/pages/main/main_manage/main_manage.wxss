@@ -1,0 +1,129 @@
+/* pages/main/main_manage/main_manage.wxss */
+.main_hot_root{
+background-color: #e8e8e8;
+}
+.swiper-tab{  
+width: 100%;  
+border-bottom: 2rpx solid #ffffff;  
+text-align: center;  
+line-height: 80rpx;}  
+.swiper-tab-list{  font-size: 30rpx;  
+display: inline-block;  
+width: 33.33%;  
+color: #777777;  
+}
+
+.on{ color: #da7c0c;  
+border-bottom: 5rpx solid #fb5353;
+}  
+
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; }  
+/*.swiper-box view{  
+text-align: center;  
+} */
+
+
+.item_view{
+padding: 20px;
+margin-top: 10px;
+margin-bottom: 10px;
+background-color: #ffffff;
+}
+
+.flex-wrp{
+margin-top: 10px;
+display:flex;
+background-color: #ffffff;
+}
+
+
+.item_text_name{
+width: 50%;
+color: #555555;
+font-size: 20px;
+}
+
+.item_progress{
+width: 35%;
+}
+.item_progress_des{
+width: 15%;
+margin-left: 10px;
+font-size: 15px;
+color: #555555;
+}
+
+/*左边布局*/
+.flex-wrp-left{
+width: 50%;
+display:flex;
+}
+.item_left_text_constant{
+margin-top: 10px;
+margin-bottom: 10px;
+color: #999999;
+font-size: 16px;
+}
+.item_left_text_value{
+font-size: 24px;
+color: #fb5353;
+}
+.item_left_text_value_unit{
+margin-left: 2px;
+font-size: 11px;
+color: #fb5353;
+}
+
+/*中间布局*/
+.flex-wrp-center{
+width: 50%;
+display:flex;
+}
+.item_center_text_constant{
+margin-top: 10px;
+margin-bottom: 10px;
+color: #999999;
+font-size: 16px;
+}
+.item_center_text_value{
+color: #555555;
+font-size: 24px;
+}
+.item_center_text_value_unit{
+margin-left: 2px;
+font-size: 11px;
+color: #555555;
+}
+
+/*右边布局*/
+.flex-wrp-right{  
+    float: right;
+width: 50%;
+display:flex;
+}
+.item_right_text_constant{
+align-self: center;
+
+margin-top: 10px;
+margin-bottom: 10px;
+color: #999999;
+font-size: 16px;
+}
+.item_right_text_value{
+color: #555555;
+font-size: 24px;
+}
+.item_right_text_value_unit{
+margin-left: 2px;
+font-size: 11px;
+color: #555555;
+}
+.flex-wrp-left credit{
+    width: 33.33%;
+}
+.flex-wrp-center credit{
+    width: 33.33%;
+}
+.flex-wrp-right credit{
+    width: 33.33%;
+}

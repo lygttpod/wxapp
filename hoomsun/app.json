@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/main/main_hot/main_hot",
+    "pages/main/main_manage/main_manage",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/main/main_hot/main_hot",
+      "text": "热卖",
+      "iconPath": "img/main_index_hot_normal.png",
+      "selectedIconPath": "img/main_index_hot_pressed.png"
+    },{
+       "pagePath": "pages/main/main_manage/main_manage",
+      "text": "理财",
+      "iconPath": "img/main_index_manage_normal.png",
+      "selectedIconPath": "img/main_index_manage_pressed.png"
+    }]
+  }
+}

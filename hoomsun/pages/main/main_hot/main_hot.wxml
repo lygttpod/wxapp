@@ -1,0 +1,46 @@
+<!--pages/main/main_hot/main_hot.wxml-->
+<view class="main_hot_root">
+
+	<swiper indicator-dots="{{indicatorDots}}"
+		autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+		<block wx:for="{{imgUrls}}">
+			<swiper-item>
+				<image src="{{item.picUrl}}" class="slide-image" />
+			</swiper-item>
+		</block>
+	</swiper>
+
+
+	<view class = "item_view" wx:for="{{ products }}">
+
+		<text class = "item_text_name">{{ item.name }}</text>
+
+		<view class="flex-wrp" style="flex-direction:row;">
+
+			<view class="flex-wrp-left" style="flex-direction:column;">
+				<view class="item_left_text_constant">年利率</view>
+				<view>
+					<text class = "item_left_text_value">{{ item.totalInterest }}</text>
+					<text class = "item_left_text_value_unit">%</text>
+				</view>		
+			</view>
+
+			<view class="flex-wrp-center" style="flex-direction:column;">
+				<view class="item_center_text_constant">还款期限</view>
+				<view>
+					<text class = "item_center_text_value">{{ item.period }}</text>
+					<text class = "item_center_text_value_unit">个月</text>
+				</view>
+				
+			</view>
+
+		</view>
+		<button style = "margin-top:20px" type="warn" plain="true">立即购买</button>
+		
+	</view>
+
+
+</view>
+
+
+

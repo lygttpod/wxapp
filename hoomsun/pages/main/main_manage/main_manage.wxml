@@ -1,0 +1,159 @@
+<!--pages/main/main_manage/main_manage.wxml-->
+
+
+<view class="swiper-tab">  
+	<view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">散标投资</view>  
+	<view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">红利计划</view>  
+	<view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">债券转让</view>  
+</view>  
+<view class="main_hot_root">
+
+	<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
+		<!-- 散标投资列表 -->  
+		<swiper-item>
+
+			<template is="item_scatter" data="{{products_scatter}}"/>
+			
+		</swiper-item>  
+		<!-- 红利计划列表 -->  
+		<swiper-item>  
+			<template is="item_plan" data="{{products_plan}}"/>
+		</swiper-item>  
+		<!--债券转让列表 -->  
+		<swiper-item>  
+		<template is="item_credit" data="{{products_credit}}"/>
+		</swiper-item>  
+	</swiper>
+
+</view>
+
+
+<template name="item_scatter">
+	<scroll-view scroll-y="true" style="height: 100%;" 
+		bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" 
+		scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+		<view class = "item_view" wx:for="{{ products_scatter }}">
+
+			<view class="flex-wrp" style="flex-direction:row;">
+
+				<text class = "item_text_name">{{ item.name }}</text>	
+				<progress class = "item_progress" percent="{{ item.salesPercentage }}"  troke-width="12" color="pink" active/>
+				<text class = "item_progress_des">{{ item.status==1 ? item.salesPercentage + "%" : item.statusName }}</text>	
+
+			</view>
+			
+			<view class="flex-wrp" style="flex-direction:row;">
+
+				<view class="flex-wrp-left" style="flex-direction:column;">
+					<view class="item_left_text_constant">年利率</view>
+					<view>
+						<text class = "item_left_text_value">{{ item.totalInterest }}</text>
+						<text class = "item_left_text_value_unit">%</text>
+					</view>		
+				</view>
+
+				<view class="flex-wrp-center" style="flex-direction:column;">
+					<view class="item_center_text_constant">还款期限</view>
+					<view>
+						<text class = "item_center_text_value">{{ item.period }}</text>
+						<text class = "item_center_text_value_unit">个月</text>
+					</view>
+
+				</view>
+
+			</view>
+		</view>
+	</scroll-view>
+</template>
+
+
+
+<template name="item_plan">
+	<scroll-view scroll-y="true" style="height: 100%;" 
+		bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" 
+		scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+		<view class = "item_view" wx:for="{{ products_plan }}">
+
+			<view class="flex-wrp" style="flex-direction:row;">
+
+				<text class = "item_text_name">{{ item.name }}</text>	
+				<progress class = "item_progress" percent="{{ item.salesPercentage }}"  troke-width="12" color="pink" active/>
+				<text class = "item_progress_des">{{ item.status==1 ? item.salesPercentage + "%" : item.statusName }}</text>	
+
+			</view>
+			
+			<view class="flex-wrp" style="flex-direction:row;">
+
+				<view class="flex-wrp-left" style="flex-direction:column;">
+					<view class="item_left_text_constant">预期年化</view>
+					<view>
+						<text class = "item_left_text_value">{{ item.totalInterest }}</text>
+						<text class = "item_left_text_value_unit">%</text>
+					</view>		
+				</view>
+
+				<view class="flex-wrp-center" style="flex-direction:column;">
+					<view class="item_center_text_constant">计划期限</view>
+					<view>
+						<text class = "item_center_text_value">{{ item.period }}</text>
+						<text class = "item_center_text_value_unit">个月</text>
+					</view>
+
+				</view>
+
+			</view>
+
+		</view>
+	</scroll-view>
+</template>
+
+
+
+<template name="item_credit">
+	<scroll-view scroll-y="true" style="height: 100%;" 
+		bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" 
+		scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+		<view class = "item_view" wx:for="{{ products_credit }}">
+
+			<view class="flex-wrp" style="flex-direction:row;">
+				<text class = "item_text_name">{{ item.name }}</text>	
+				
+			</view>
+			
+			<view class="flex-wrp" style="flex-direction:row;">
+
+				<view class="flex-wrp-left credit" style="flex-direction:column;">
+					<view class="item_left_text_constant">年利率</view>
+					<view>
+						<text class = "item_left_text_value">{{ item.totalInterest }}</text>
+						<text class = "item_left_text_value_unit">%</text>
+					</view>		
+				</view>
+
+				<view class="flex-wrp-center credit" style="flex-direction:column;">
+					<view class="item_center_text_constant" style="justify-content: center;align-items: right;">剩余期限</view>
+					<view style="justify-content: center;align-items: center;">
+						<text class = "item_center_text_value">{{ item.period }}</text>
+						<text class = "item_center_text_value_unit">个月</text>
+					</view>
+
+				</view>
+
+				<view class="flex-wrp-right credit" style="flex-direction:column;" >
+					<view class="item_right_text_constant">转让价格</view>
+					<view>
+						<text class = "item_right_text_value">{{ item.period }}</text>
+						<text class = "item_right_text_value_unit">元/份</text>
+					</view>
+
+				</view>
+
+
+			</view>
+
+		</view>
+	</scroll-view>
+</template>
